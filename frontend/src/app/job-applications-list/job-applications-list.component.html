@@ -1,1 +1,11 @@
-<p>job-applications-list works!</p>
+<div>
+    <h2>Job Applications</h2>
+    <ul>
+      <li *ngFor="let job of jobApplications">
+        <a [routerLink]="['/job-application-details', job.id]">
+          {{ job.title }} at {{ job.company }} - Status: {{ job.status }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  
