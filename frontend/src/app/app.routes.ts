@@ -6,5 +6,6 @@ import { JobApplicationDetailsComponent } from './components/job-application-det
 export const appRoutes: Routes = [
   { path: '', component: JobApplicationsListComponent },
   { path: 'job-application-form', component: JobApplicationFormComponent },
+  { path: 'job-application-details', component: JobApplicationDetailsComponent }, 
   { path: 'job-application-details/:id', component: JobApplicationDetailsComponent },
 ];

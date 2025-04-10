@@ -35,48 +35,12 @@ export class JobApplicationDetailsComponent implements OnInit {
     },
     {
       id: 3,
-      title: 'Software Developer',
+      title: 'Angular Developer',
       company: 'Euvic :)',
       status: 'Interviewed',
-      applicationDate: new Date('2025-04-06'),
-      jobLocation: 'Gliwice, Poland',
-      notes: 'Interview scheduled for 2025-04-11, technical interview with the manager'
-    },
-    {
-      id: 4,
-      title: 'Frontend Developer',
-      company: 'Brainly',
-      status: 'Offer',
-      applicationDate: new Date('2025-03-01'),
-      jobLocation: 'Remote',
-      notes: 'Received offer, pending acceptance'
-    },
-    {
-      id: 5,
-      title: 'Backend Developer',
-      company: 'Capgemini',
-      status: 'Applied',
-      applicationDate: new Date('2025-03-05'),
-      jobLocation: 'Gdańsk, Poland',
-      notes: 'Applied through employee referral'
-    },
-    {
-      id: 6,
-      title: 'Full Stack Developer',
-      company: 'Cognizant',
-      status: 'Interviewed',
-      applicationDate: new Date('2025-02-20'),
-      jobLocation: 'Wrocław, Poland',
-      notes: 'Final round of interviews, technical and HR interviews done'
-    },
-    {
-      id: 7,
-      title: 'DevOps Engineer',
-      company: 'Luxoft',
-      status: 'Offer',
-      applicationDate: new Date('2025-02-28'),
-      jobLocation: 'Poznań, Poland',
-      notes: 'Offer received, negotiating salary and benefits'
+      applicationDate: new Date('2025-02-01'),
+      jobLocation: 'Katowice, Poland',
+      notes: 'Interview scheduled for 2025-02-05, technical interview with team'
     }
   ];
 
@@ -84,7 +48,7 @@ export class JobApplicationDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.jobId = +params['id'];  
+      this.jobId = params['id'] ? +params['id'] : null;  
       this.getJobApplicationDetails();  
     });
   }
@@ -94,6 +58,8 @@ export class JobApplicationDetailsComponent implements OnInit {
       this.jobApplication = this.jobApplications.find(
         job => job.id === this.jobId
       ) || null;  
+    } else {
+      this.jobApplication = null; 
     }
   }
 }

@@ -4,9 +4,9 @@
     <p>Location: {{ jobApplication.jobLocation || 'N/A' }}</p>
     <p>Application Date: {{ jobApplication.applicationDate | date }}</p>
     <p>Notes: {{ jobApplication.notes || 'No additional notes' }}</p>
-</div>
-
-<ng-template #noJobFound>
-    <p>No job application found with ID {{ jobId }}.</p>
-</ng-template>
+  </div>
+  
+  <ng-template #noJobFound>
+    <p>No job details available. You can select a job application from the list.</p>
+  </ng-template>
   

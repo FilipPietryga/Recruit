@@ -32,7 +32,7 @@ export class JobApplicationsListComponent {
     },
     {
       id: 3,
-      title: 'Software Developer',
+      title: 'Angular Developer',
       company: 'Euvic :)',
       status: 'Interviewed',
       applicationDate: new Date('2025-04-06'),
