@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { JobApplicationsListComponent } from './job-applications-list/job-applications-list.component';
-import { JobApplicationFormComponent } from './job-application-form/job-application-form.component';
-import { JobApplicationDetailsComponent } from './job-application-details/job-application-details.component';
+import { JobApplicationsListComponent } from './components/job-applications-list/job-applications-list.component';
+import { JobApplicationFormComponent } from './components/job-application-form/job-application-form.component';
+import { JobApplicationDetailsComponent } from './components/job-application-details/job-application-details.component';
 
 export const appRoutes: Routes = [
   { path: '', component: JobApplicationsListComponent },

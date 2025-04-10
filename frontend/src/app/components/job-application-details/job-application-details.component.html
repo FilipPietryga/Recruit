@@ -1,0 +1,12 @@
+<div *ngIf="jobApplication; else noJobFound">
+    <h2>{{ jobApplication.title }} - {{ jobApplication.company }}</h2>
+    <p>Status: {{ jobApplication.status }}</p>
+    <p>Location: {{ jobApplication.jobLocation || 'N/A' }}</p>
+    <p>Application Date: {{ jobApplication.applicationDate | date }}</p>
+    <p>Notes: {{ jobApplication.notes || 'No additional notes' }}</p>
+</div>
+
+<ng-template #noJobFound>
+    <p>No job application found with ID {{ jobId }}.</p>
+</ng-template>
+  
