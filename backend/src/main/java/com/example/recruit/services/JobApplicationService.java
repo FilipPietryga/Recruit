@@ -11,22 +11,27 @@ import java.util.Optional;
 @Service
 public class JobApplicationService {
 
-    private final JobApplicationRepository jobApplicationRepository;
-
     @Autowired
-    public JobApplicationService(JobApplicationRepository jobApplicationRepository) {
-        this.jobApplicationRepository = jobApplicationRepository;
-    }
+    private JobApplicationRepository jobApplicationRepository;
 
     public List<JobApplication> getAllJobApplications() {
         return jobApplicationRepository.findAll();
     }
 
-    public Optional<JobApplication> getJobApplicationById(Long id) {
-        return jobApplicationRepository.findById(id);
+    public JobApplication getJobApplicationById(Long id) {
+        Optional<JobApplication> jobApplication = jobApplicationRepository.findById(id);
+        return jobApplication.orElseThrow(() -> new RuntimeException("Job Application not found"));
     }
 
     public JobApplication createJobApplication(JobApplication jobApplication) {
+        return jobApplicationRepository.save(jobApplication);
+    }
+
+    public JobApplication updateJobApplication(Long id, JobApplication jobApplication) {
+        if (!jobApplicationRepository.existsById(id)) {
+            throw new RuntimeException("Job Application not found");
+        }
+        jobApplication.setId(id);
         return jobApplicationRepository.save(jobApplication);
     }
 

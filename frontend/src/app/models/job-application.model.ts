@@ -4,7 +4,7 @@ export interface JobApplication {
     company: string;
     status: 'Applied' | 'Interviewed' | 'Offer' | 'Rejected';
     applicationDate: Date;
-    jobLocation?: string;  
-    notes?: string;  
-  }
+    jobLocation: string;  
+    notes: string;  
+}
   
